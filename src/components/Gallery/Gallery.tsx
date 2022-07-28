@@ -14,7 +14,7 @@ function Gallery() {
   });
 
   useEffect(() => {
-    let ignore = false;
+    const ignore = false;
 
     dispatch({ type: "request" });
     axios(
@@ -27,9 +27,9 @@ function Gallery() {
       (error: string) => dispatch({ type: "failure", error }),
     );
 
-    return (): void => {
-      ignore = true;
-    };
+    // return (): void => {
+    //   ignore = true;
+    // };
   }, []);
 
   return (
